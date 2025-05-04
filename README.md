@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
 
-## Project info
+# Collegium Event Nexus
 
-**URL**: https://lovable.dev/projects/5f2c278f-3bae-4844-9fd9-f7e8b809bf0f
+A modern web platform for discovering and sharing college tech events. This application serves as a central hub for students to find hackathons, tech talks, and workshops across multiple colleges.
 
-## How can I edit this code?
+![Collegium Event Nexus](https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Event Discovery**: Browse a curated list of upcoming tech events from multiple colleges
+- **Advanced Filtering**: Find events by type, college, date range, and keywords
+- **Event Submission**: Submit new events to be added to the platform
+- **Responsive Design**: Access the platform on any device with a fully responsive UI
+- **Rich Event Details**: View comprehensive information about each event including descriptions, locations, and external links
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5f2c278f-3bae-4844-9fd9-f7e8b809bf0f) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React**: Frontend library for building user interfaces
+- **TypeScript**: Strongly-typed JavaScript for more reliable code
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
+- **Shadcn UI**: High-quality UI components built with Radix UI and Tailwind
+- **date-fns**: Modern JavaScript date utility library
+- **Vite**: Next-generation frontend tooling for faster development
 
-**Use your preferred IDE**
+## Project Structure
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/      # React components
+│   ├── EventCard.tsx
+│   ├── EventFilters.tsx
+│   ├── EventModal.tsx
+│   └── EventSubmissionForm.tsx
+├── data/           # Mock data
+│   └── mockEvents.ts
+├── lib/            # Utility functions
+│   └── eventUtils.ts
+├── pages/          # Page components
+│   ├── Index.tsx
+│   └── NotFound.tsx
+├── types/          # TypeScript type definitions
+│   └── index.ts
+├── App.tsx         # Main app component
+└── main.tsx        # Entry point
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- Node.js (v16 or later)
+- npm or yarn
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Installation
 
-## What technologies are used for this project?
+1. Clone the repository
+```sh
+git clone <repository-url>
+cd collegium-event-nexus
+```
 
-This project is built with:
+2. Install dependencies
+```sh
+npm install
+# or
+yarn install
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. Start the development server
+```sh
+npm run dev
+# or
+yarn dev
+```
 
-## How can I deploy this project?
+4. Open your browser and navigate to `http://localhost:8080`
 
-Simply open [Lovable](https://lovable.dev/projects/5f2c278f-3bae-4844-9fd9-f7e8b809bf0f) and click on Share -> Publish.
+## Development
 
-## Can I connect a custom domain to my Lovable project?
+### Adding New Events
 
-Yes, you can!
+Events can be added in two ways:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. **Via the UI**: Use the "Submit New Event" button on the dashboard to open the submission form
+2. **Via Code**: Add new events to the `mockEvents.ts` file
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Mock Data
+
+The application currently uses mock data located in `src/data/mockEvents.ts`. This can be replaced with API calls to fetch real data in production.
+
+### Future Enhancements
+
+- User authentication for personalized event tracking
+- Email notifications for upcoming events
+- Integration with college calendar systems
+- Event recommendation based on user preferences
+- Social sharing functionality
+
+## Deployment
+
+To build the application for production:
+
+```sh
+npm run build
+# or
+yarn build
+```
+
+The built files will be in the `dist` directory, ready to be deployed to any static hosting service.
+
+## License
+
+MIT License - See the LICENSE file for details
