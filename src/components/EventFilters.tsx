@@ -93,7 +93,7 @@ const EventFiltersComponent: React.FC<EventFiltersProps> = ({
                 <SelectValue placeholder="Select College" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Colleges</SelectItem>
+                <SelectItem value="all_colleges">All Colleges</SelectItem>
                 {colleges.map((college) => (
                   <SelectItem key={college} value={college}>
                     {college}

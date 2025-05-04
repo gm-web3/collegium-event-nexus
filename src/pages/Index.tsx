@@ -20,7 +20,7 @@ const Index: React.FC = () => {
   const [filters, setFilters] = useState<EventFiltersType>({
     search: "",
     type: "all",
-    college: "",
+    college: "all_colleges",
     dateRange: {
       from: null,
       to: null,
@@ -40,7 +40,7 @@ const Index: React.FC = () => {
     setFilters({
       search: "",
       type: "all",
-      college: "",
+      college: "all_colleges",
       dateRange: {
         from: null,
         to: null,
@@ -56,7 +56,12 @@ const Index: React.FC = () => {
     setEvents([event, ...events]);
   };
 
-  const filteredEvents = sortEventsByDate(filterEvents(events, filters));
+  // Update filterEvents function to handle the "all_colleges" value
+  const filteredEvents = sortEventsByDate(filterEvents(events, {
+    ...filters,
+    college: filters.college === "all_colleges" ? "" : filters.college
+  }));
+  
   const availableColleges = getUniqueColleges(events);
 
   return (
